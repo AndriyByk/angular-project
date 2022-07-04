@@ -1,0 +1,6 @@
+<div class='movie-list'>
+  <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>
+</div>
+
+<!--  {(status === 'pending' && <h2>Loading...</h2>) ||-->
+<!--            movies.map(movie => <MoviesListCard key={movie.id} movie={changeGenres(movie)}/>)}-->

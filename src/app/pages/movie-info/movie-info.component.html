@@ -1,0 +1,59 @@
+<div class='movie-details-full'>
+  <div class='movie-details-full-back_button'>
+    <button (click)="navigate('/')"><<</button>
+  </div>
+  <div class='movie-details-full-info'>
+    <div class='movie-details-full-title'>{{movie.title}}</div>
+    <div class='movie-details-full-original_title'>Original title: {{movie.original_title}}</div>
+    <div class='movie-details-full-release_runtime'>
+      <div class='movie-details-full-release'>Release: {{movie.release_date}}</div>
+      <div class='movie-details-full-runtime'>Runtime: {{movie.runtime}} min</div>
+    </div>
+    <div class='movie-details-full-genres'>
+      <div *ngFor="let genre of movie.genres" class='movie-details-full-genre'>{{genre.name}}</div>
+<!--      {movie.genres?.map(genre => <div key={genre.name}-->
+<!--      class={'movie-details-full-genre'}>{genre.name}</div>)}-->
+    </div>
+    <div class='movie-details-full-overview'>{{movie.overview}}</div>
+    <div class='movie-details-full-homepage'>
+      <a href='{{movie.homepage}}'>Site</a>
+    </div>
+    <div class='movie-details-full-companies_countries'>
+      <div class='movie-details-full-companies'>
+        <div class='movie-details-full-companies-title'>Production:</div>
+        <div class='movie-details-full-companies-list'>
+          <div *ngFor="let company of movie.production_companies" class='movie-details-full-company'>{{company.name}}</div>
+<!--          {movie.production_companies?.map(company => <div key={company.name} className={'movie-details-full-company'}>{company.name}</div>)}-->
+
+        </div>
+      </div>
+      <div class='movie-details-full-countries'>
+        <div class='movie-details-full-countries-title'>
+          Countries:
+        </div>
+        <div class='movie-details-full-countries-list'>
+          <div *ngFor="let country of movie.production_countries" class='movie-details-full-country'>{{country.name}}</div>
+<!--          {movie.production_countries?.map(country => <div-->
+<!--                                key={country.name} className={'movie-details-full-country'}>{country.name}</div>)}-->
+
+        </div>
+      </div>
+    </div>
+
+    <div class='movie-details-full-language_budget'>
+      <div class='movie-details-full-language'>
+        Original language: {{movie.original_language}}
+      </div>
+      <div class='movie-details-full-budget'>Budget: {{movie.budget}}</div>
+    </div>
+    <div class='movie-details-full-end'>
+      <div class='movie-details-full-vote'>
+        <div class='movie-details-full-vote_average'>{{movie.vote_average}}</div>
+        <div class='movie-details-full-vote_count'>/{{movie.vote_count}}</div>
+      </div>
+    </div>
+  </div>
+  <div class='movie-details-full-image'>
+    <img src='{{url + movie.poster_path}}' alt=""/>
+  </div>
+</div>

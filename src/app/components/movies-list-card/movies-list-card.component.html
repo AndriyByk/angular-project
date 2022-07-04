@@ -1,0 +1,37 @@
+<div class='movie'>
+  <a [routerLink]="['', movie.id]" [state]="{data: movie}">
+    <!--  <Link to={`/${movie.id}`} state={{movie}}>-->
+    <!--  {movie.id !== +id &&-->
+
+    <div *ngIf="movie.id != +id "  class='movie-wrapper'>
+      <div class='movie-image'>
+        <img *ngIf="movie.backdrop_path" src='{{url + movie.backdrop_path}}' alt=""/>
+        <div *ngIf="!movie.backdrop_path">No picture</div>
+
+        <!--      {(movie.backdrop_path &&<img src={baseImgURL + imgSize.logo_w300 + movie.backdrop_path}-->
+        <!--      alt=""/>) || <div>No picture</div>}-->
+
+      </div>
+      <div class='movie-title'>{{movie.title}}</div>
+      <div class='movie-body'>
+        <div class='movie-release-year'>Release: {{movie.release_date}}</div>
+        <div class='movie-vote'>
+          <div class='movie-vote-average'>{{movie.vote_average}}</div>
+          <div class='movie-vote-count'>/{{movie.vote_count}}</div>
+        </div>
+      </div>
+      <div class='movie-genres'>
+        <div *ngFor="let genre of genres" class='movie-genre'>{{genre.name}}</div>
+        <!--                      {movie.genre_ids.map(genre => <div class={'movie-genre'} key={genre}>{genre}</div>)}-->
+      </div>
+    </div>
+  </a>
+
+<!--  <ng-template #elseBlock class='movie-details-page'>-->
+    <!--  {movie.id === +id &&-->
+  <!--            <div class={'movie-details-page'}><Outlet/></div>-->
+<!--  <div *ngIf="movie.id == +id" class='movie-details-page'>-->
+    <router-outlet></router-outlet>
+<!--  </div>-->
+  <!--  </ng-template>-->
+</div>

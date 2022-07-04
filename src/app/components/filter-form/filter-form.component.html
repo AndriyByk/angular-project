@@ -1,0 +1,62 @@
+<div class='filter-form'>
+  <div class='filter-form-wrapper'>
+    <form [formGroup]="form">
+      <div class='filter-form-body'>
+        <div class='filter-form-inputs'>
+          <div class='filter-form-input-keywords'>
+            <div class='filter-form-input-keywords-warning'>
+              <div *ngIf="keyW.length === 0">No such keyword. Enter appropriate.</div>
+              <!--              {(keyW.length === 0) && <div>No such keyword. Enter appropriate.</div>}-->
+            </div>
+            <div class='filter-form-input-keywords-input'>
+              <input list="keywords" formControlName='keywords' type="text" (change)="mediate()"/>
+              <datalist id="keywords">
+                <option *ngFor="let w of keyW" value="{{w.name}}">{{w.name}}</option>
+                <!--                {keyW.length && keyW.map(w => <option key={w.id}-->
+                <!--                value={w.name}>{w.name}</option>)}-->
+              </datalist>
+            </div>
+          </div>
+          <div class='filter-form-input-genres'>
+            <div>Genre:</div>
+            <select formControlName="genre">
+              <option disabled>All genres</option>
+              <option  *ngFor="let genre of genres" [ngValue]="genre" class='filter-form-input-genre'>
+                {{genre.name}}
+              </option>
+              <!--value="{{genre.id}}"-->
+            </select>
+          </div>
+          <div class='filter-form-input-date_release_after'>
+            <div>Release after:</div>
+            <input type="date" formControlName="release_after"/>
+          </div>
+          <div class='filter-form-input-date_release_before'>
+            <div>Release before:</div>
+            <input type="date" formControlName="release_before"/>
+          </div>
+        </div>
+        <div class='button'>
+          <button (click)="takeFilterInfo()">Filter</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class='pages-wrapper'>
+    <div class='pages'>
+      <div class='pages-buttons'>
+        <div class='pages-previous_page_button'>
+          <button (click)="goBackPage()"><< Previous page</button>
+        </div>
+        <div class='pages-actual-page'>{{actual_page}}</div>
+        <div class='pages-next_page_button'>
+          <button (click)="goNextPage()">Next page >></button>
+        </div>
+      </div>
+      <div class='pages-total_info'>
+        <div class='pages-total_pages'>Total pages: {{movies_results.pages}}</div>
+        <div class='pages-total_results'>Total results: {{movies_results.results}}</div>
+      </div>
+    </div>
+  </div>
+</div>

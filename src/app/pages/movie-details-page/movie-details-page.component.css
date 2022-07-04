@@ -1,0 +1,95 @@
+.movie-details-short {
+  display: flex;
+  row-gap: 10px;
+  margin: 50px 20px 20px 20px;
+}
+
+.movie-details-short-picture {
+  flex-grow: 5;
+}
+
+.movie-details-short-image {
+  width: 100%
+}
+
+.movie-details-short-image img {
+  box-shadow: 10px 0 50px 1px #000000;
+  max-width: 50vw;
+}
+
+.movie-details-short-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-top: 20px;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.movie-details-short-text > div {
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+  box-shadow: 0 0 15px 5px black;
+}
+
+.movie-details-short-title {
+  font-size: 200%;
+  font-family: "Agency FB", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.movie-details-short-body {
+  display: flex;
+  justify-content: space-between;
+  color: #9b9b9b;
+}
+
+.movie-details-short-vote {
+  font-family: "Agency FB", sans-serif;
+  display: flex;
+}
+
+.movie-details-short-vote_average {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+
+.movie-details-short-release_year span {
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  font-family: "Agency FB", sans-serif;
+}
+
+.movie-details-short-genres {
+  display: flex;
+  color: #9b9b9b;
+  column-gap: 10px;
+}
+
+.movie-details-short-genre {
+  color: black;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: "Agency FB", sans-serif;
+}
+
+.movie-details-short-link {
+  display: flex;
+  font-weight: bold;
+  font-family: "Agency FB", sans-serif;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
+}
+
+.movie-details-short-link:hover {
+  box-shadow: 0 0 15px 5px black;
+}
+
+.movie-details-short-overview {
+  color: black;
+}

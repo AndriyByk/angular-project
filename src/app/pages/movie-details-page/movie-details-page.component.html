@@ -1,0 +1,34 @@
+<div class='movie-details-short'>
+<!--  <div ref={focus} class='movie-details-short'>-->
+
+  <div class='movie-details-short-picture'>
+    <div class='movie-details-short-image'>
+      <img src='{{url + movie.backdrop_path}}' alt=""/></div>
+  </div>
+  <div class='movie-details-short-text'>
+    <div class='movie-details-short-title'>{{movie.title}}</div>
+    <div class='movie-details-short-body'>
+      <div class='movie-details-short-release_year'>Release
+        date: <span>{{movie.release_date}}</span></div>
+      <div class='movie-details-short-vote'>
+        <div class='movie-details-short-vote_average'>
+          {{movie.vote_average}}</div>
+        <div class='movie-details-short-vote_count'>/{{movie.vote_count}}</div>
+      </div>
+    </div>
+    <div class='movie-details-short-genres'>Genres:
+      <div *ngFor="let genre of genres" class='movie-details-short-genre'>{{genre.name}}</div>
+      <!--      {movie_short.genre_ids?.map(genre => <div class={'movie-details-short-genre'}-->
+      <!--      key={genre}>{genre.toUpperCase()}</div>)}-->
+    </div>
+    <div class='movie-details-short-overview'>
+      {{movie.overview}}
+    </div>
+    <a [routerLink]="['details']">
+      <div class='movie-details-short-link'>
+        DETAILS
+<!--        <router-outlet></router-outlet>-->
+      </div>
+    </a>
+  </div>
+</div>
